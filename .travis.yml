@@ -12,6 +12,7 @@ env:
   - TOXENV=pyright
 
 install:
+  - npm install -g pyright@1.1.74
   - pip install -r dev-requirements.txt
 
 script:
