@@ -1,0 +1,8 @@
+coverage==4.5.3
+pytest-cov==2.7.1
+pytest==4.6.2
+pepper8==1.1.1
+flake8-future-import==0.4.5
+flake8==3.7.7
+flake8-isort==2.7
+isort==4.3.4

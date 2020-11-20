@@ -1,0 +1,13 @@
+[run]
+include =
+    */common_migration/*
+omit =
+    */ve/*
+    */.tox/*
+branch = True
+
+[html]
+directory = .htmlcov
+
+[xml]
+output = .coverage.xml

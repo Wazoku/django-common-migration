@@ -1,0 +1,17 @@
+{
+  "venvPath": "./",
+  "venv": "ve",
+  "pythonVersion": "3.6",
+  "include": [
+    "./common_migration"
+  ],
+  "exclude": [
+    "./ve",
+    "./setup.py",
+    "./common_migration/tests/migration_files"
+  ],
+  "reportUnusedVariable": false,
+  "reportUnusedClass": false,
+  "reportUnusedFunction": false,
+  "typeCheckingMode": "strict"
+}
