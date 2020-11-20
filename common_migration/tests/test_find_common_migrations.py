@@ -445,7 +445,7 @@ class FindMigrationScriptTestCase(TestCase):
         # file, then migrating forwards to it an on to 0010_make...
         print_mock.assert_called()
         print_mock.assert_has_calls([
-            mock.call('0004_add.py'),
+            mock.call('0004_add'),
         ])
 
     def test_find_tenancy_reverse_migration(self):
@@ -456,7 +456,7 @@ class FindMigrationScriptTestCase(TestCase):
 
         print_mock.assert_called()
         print_mock.assert_has_calls([
-            mock.call('0010_enable.py'),
+            mock.call('0010_enable'),
         ])
 
     def test_invalid_app_name(self):

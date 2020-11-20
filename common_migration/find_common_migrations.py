@@ -445,7 +445,7 @@ def main():
     if reverse_node is None:
         sys.exit('There are no migrations in common!')
 
-    print(f'{reverse_node.name}.py')
+    print(f'{reverse_node.name}')
 
 
 if __name__ == "__main__":  # pragma: no cover
