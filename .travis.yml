@@ -1,12 +1,13 @@
 ---
 language: python
 os: linux
-dist: xenial
+dist: bionic
 
 jobs:
   - python: "3.9"
+    env: TOXENV=pyright
     install: npm install -g pyright@1.1.74
-    script: node --experimental-worker "$(command -v pyright)" common_migration
+    script: pyright common_migration
   - python: "3.9"
     env: TOXENV=pytest
   - python: "3.9"
