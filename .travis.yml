@@ -2,17 +2,28 @@
 language: python
 os: linux
 dist: xenial
-
 python:
   - "3.6"
+  - "3.9"
+node_js: lts/*
 
-env:
-  - TOXENV=pytest
-  - TOXENV=flake8
-  - TOXENV=pyright
+jobs:
+  include:
+    - python: "3.9"
+      env: TOXENV=pyright
+      install:
+        - npm install -g pyright@1.1.74
+        - pip install -r dev-requirements.txt
+    - python: "3.9"
+      env: TOXENV=pytest
+    - python: "3.9"
+      env: TOXENV=flake8
+    - python: "3.6"
+      env: TOXENV=pytest
+    - python: "3.6"
+      env: TOXENV=flake8
 
 install:
-  - npm install -g pyright@1.1.74
   - pip install -r dev-requirements.txt
 
 script:
