@@ -1,4 +1,4 @@
-# django-common-migration
+# django-common-migration [![Travis CI Build Status](https://travis-ci.com/Wazoku/django-common-migration.svg?branch=master)](https://travis-ci.com/Wazoku/django-common-migration)
 
 Find migrations in common between different versions of the code, for use with
 reversing migrations on QA machines.
