@@ -4,7 +4,8 @@ os: linux
 dist: bionic
 
 jobs:
-  - python: "3.9"
+  - language: node_js
+    node_js: lts/*
     env: TOXENV=pyright
     install: npm install -g pyright@1.1.74
     script: pyright common_migration
