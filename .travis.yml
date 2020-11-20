@@ -1,0 +1,18 @@
+---
+language: python
+os: linux
+dist: xenial
+
+python:
+  - "3.6"
+
+env:
+  - TOXENV=pytest
+  - TOXENV=flake8
+  - TOXENV=pyright
+
+install:
+  - pip install -r dev-requirements.txt
+
+script:
+  - tox
