@@ -8,7 +8,7 @@ else
 fi
 
 if [ ! -d "$ve_dir" ]; then
-  python3.6 -m venv "$ve_dir"
+  python3.9 -m venv "$ve_dir"
   "$ve_dir"/bin/pip install pip=="$pipver"
 fi
 
