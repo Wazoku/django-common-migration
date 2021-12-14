@@ -467,10 +467,10 @@ class FindMigrationScriptTestCase(TestCase):
 
         assert str(ctx.exception) == 'Invalid app_name: wat'
 
-    def test_script_fails_when_all_migrations_are_replaced(self):
+    def test_script_prints_nothing_when_all_migrations_are_replaced(self):
         sys.argv[-1] = os.path.join(TEST_MIGRATION_FILES_DIR, 'totally_replaced')
 
-        with self.assertRaises(SystemExit) as ctx:
+        with mock.patch('builtins.print') as print_mock:
             main()
 
-        assert str(ctx.exception) == 'There are no migrations in common!'
+        print_mock.assert_not_called()
