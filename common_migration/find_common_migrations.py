@@ -191,7 +191,7 @@ def _read_migration_tuples(
             if isinstance(node, ast.Assign)
             and len(node.targets) == 1
             and isinstance(node.targets[0], ast.Name)
-            and cast(ast.Name, node.targets[0]).id == attribute_name
+            and node.targets[0].id == attribute_name
             and isinstance(node.value, ast.List)
         ),
         None
@@ -200,7 +200,7 @@ def _read_migration_tuples(
     if ast_list is None:
         return []
 
-    migration_names = []
+    migration_names: list[tuple[str, str]] = []
 
     for element in ast_list.elts:
         if not isinstance(element, ast.Tuple):
@@ -442,10 +442,8 @@ def main():
 
     reverse_node = find_reverse_migration_node(old_node, new_node, app_name)
 
-    if reverse_node is None:
-        sys.exit('There are no migrations in common!')
-
-    print(f'{reverse_node.name}')
+    if reverse_node is not None:
+        print(f'{reverse_node.name}')
 
 
 if __name__ == "__main__":  # pragma: no cover
